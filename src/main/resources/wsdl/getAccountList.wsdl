@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="getAccountList" targetNamespace="http://soprabanking.com/amplitude" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:fjs="http://soprabanking.com/amplitude" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://soprabanking.com/amplitude" xmlns:s1="http://soprabanking.com/amplitude">
+      <xsd:simpleType name="charMax50">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="charMax10">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:length value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="charMax30">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="language">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="code" type="s1:char3"/>
+          <xsd:element minOccurs="0" name="designation" type="s1:charMax30"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="responseHeader">
+        <xsd:sequence>
+          <xsd:element name="requestId" type="s1:charMax50"/>
+          <xsd:element name="responseId" type="s1:charMax50"/>
+          <xsd:element type="xsd:dateTime" name="timestamp"/>
+          <xsd:element name="serviceVersion" type="s1:charMax10"/>
+          <xsd:element minOccurs="0" name="language" type="s1:language"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="statusCodeType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="-1"/>
+          <xsd:enumeration value="0"/>
+          <xsd:enumeration value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="responseMessageNature">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="ERROR"/>
+          <xsd:enumeration value="INFO"/>
+          <xsd:enumeration value="WARNING"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:length value="6"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="errorInformation">
+        <xsd:sequence>
+          <xsd:element type="xsd:string" name="errorCode" minOccurs="0"/>
+          <xsd:element type="xsd:string" name="convertedCode" minOccurs="0"/>
+          <xsd:element type="xsd:string" name="errorMessage" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="responseStatusMessage">
+        <xsd:sequence>
+          <xsd:element name="nature" type="s1:responseMessageNature"/>
+          <xsd:element name="code" type="s1:char6"/>
+          <xsd:element type="xsd:string" name="line" maxOccurs="unbounded" minOccurs="0"/>
+          <xsd:element minOccurs="0" name="errorInformation" type="s1:errorInformation"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="responseStatusMessages">
+        <xsd:sequence>
+          <xsd:element name="message" type="s1:responseStatusMessage" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="responseStatus">
+        <xsd:sequence>
+          <xsd:element name="statusCode" type="s1:statusCodeType"/>
+          <xsd:element minOccurs="0" name="messages" type="s1:responseStatusMessages"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="errorResponseFlow">
+        <xsd:sequence>
+          <xsd:element name="responseHeader" type="s1:responseHeader"/>
+          <xsd:element name="responseStatus" type="s1:responseStatus"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="errorResponseFlow" type="s1:errorResponseFlow"/>
+      <xsd:complexType name="getStatusRequestFlow">
+        <xsd:sequence>
+          <xsd:element type="xsd:string" name="getStatusRequest"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getStatusRequestFlow" type="s1:getStatusRequestFlow"/>
+      <xsd:complexType name="getStatusResponse">
+        <xsd:sequence>
+          <xsd:element type="xsd:dateTime" name="timeStamp"/>
+          <xsd:element name="serviceName" type="s1:charMax50"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getStatusResponseFlow">
+        <xsd:sequence>
+          <xsd:element name="getStatusResponse" type="s1:getStatusResponse"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getStatusResponseFlow" type="s1:getStatusResponseFlow"/>
+      <xsd:simpleType name="languageCode">
+        <xsd:restriction base="xsd:string">
+          <xsd:length value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="channelCode">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="0"/>
+          <xsd:maxLength value="6"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="requestHeader">
+        <xsd:sequence>
+          <xsd:element name="requestId" type="s1:charMax50"/>
+          <xsd:element name="serviceName" type="s1:charMax50"/>
+          <xsd:element type="xsd:dateTime" name="timestamp"/>
+          <xsd:element minOccurs="0" name="originalName" type="s1:charMax50"/>
+          <xsd:element minOccurs="0" name="originalId" type="s1:charMax50"/>
+          <xsd:element type="xsd:dateTime" name="originalTimestamp" minOccurs="0"/>
+          <xsd:element minOccurs="0" name="languageCode" type="s1:languageCode"/>
+          <xsd:element name="userCode" type="s1:charMax10"/>
+          <xsd:element minOccurs="0" name="channelCode" type="s1:channelCode"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="accountCategory">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="C"/>
+          <xsd:enumeration value="I"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char5">
+        <xsd:restriction base="xsd:string">
+          <xsd:length value="5"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="branch">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="code" type="s1:char5"/>
+          <xsd:element minOccurs="0" name="designation" type="s1:charMax30"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="simpleCurrency">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="alphaCode" type="s1:char3"/>
+          <xsd:element minOccurs="0" name="numericCode" type="s1:char3"/>
+          <xsd:element minOccurs="0" name="designation" type="s1:charMax30"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="charMax11">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="11"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="charMax2">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="internalFormatAccountOurBranch">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="branch" type="s1:branch"/>
+          <xsd:element minOccurs="0" name="currency" type="s1:simpleCurrency"/>
+          <xsd:element minOccurs="0" name="account" type="s1:charMax11"/>
+          <xsd:element minOccurs="0" name="suffix" type="s1:charMax2"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="charMax34">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="34"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ibanFormatAccount">
+        <xsd:sequence>
+          <xsd:element name="value" type="s1:charMax34"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="externalFormatAccount">
+        <xsd:sequence>
+          <xsd:element name="value" type="s1:charMax34"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="accountIdentifierOurBranch">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="internalFormatAccountOurBranch" type="s1:internalFormatAccountOurBranch"/>
+          <xsd:element minOccurs="0" name="ibanFormatAccount" type="s1:ibanFormatAccount"/>
+          <xsd:element minOccurs="0" name="externalFormatAccount" type="s1:externalFormatAccount"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="comparisonOperator">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="CONTAINS"/>
+          <xsd:enumeration value="ENDS WITH"/>
+          <xsd:enumeration value="EQUALS"/>
+          <xsd:enumeration value="STARTS WITH"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="designation">
+        <xsd:sequence>
+          <xsd:element type="xsd:string" name="value"/>
+          <xsd:element name="comparisonOperator" type="s1:comparisonOperator"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="charMax15">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="15"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="charMax67">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="67"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="restrictedCustomer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customerNumber" type="s1:charMax15"/>
+          <xsd:element minOccurs="0" name="displayedName" type="s1:charMax67"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="customerType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="1"/>
+          <xsd:enumeration value="2"/>
+          <xsd:enumeration value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="charMax3">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="customerProfile">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="code" type="s1:charMax3"/>
+          <xsd:element minOccurs="0" name="designation" type="s1:charMax30"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="charMax20">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="customerOfficer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="code" type="s1:charMax3"/>
+          <xsd:element minOccurs="0" name="name" type="s1:charMax30"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="decimal32_16">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="32"/>
+          <xsd:fractionDigits value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="comparator">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="BETWEEN"/>
+          <xsd:enumeration value="BETWEEN EQUALS"/>
+          <xsd:enumeration value="EQUALS"/>
+          <xsd:enumeration value="GREATER EQUALS"/>
+          <xsd:enumeration value="GREATER THAN"/>
+          <xsd:enumeration value="LOWER EQUALS"/>
+          <xsd:enumeration value="LOWER THAN"/>
+          <xsd:enumeration value="NOT EQUALS"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="comparisonDecimal">
+        <xsd:sequence>
+          <xsd:element name="decimal1" type="s1:decimal32_16"/>
+          <xsd:element minOccurs="0" name="decimal2" type="s1:decimal32_16"/>
+          <xsd:element name="comparator" type="s1:comparator"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="comparisonDate">
+        <xsd:sequence>
+          <xsd:element type="xsd:date" name="date1"/>
+          <xsd:element type="xsd:date" name="date2" minOccurs="0"/>
+          <xsd:element name="comparator" type="s1:comparator"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="comparisonAdditionalDataValue">
+        <xsd:choice>
+          <xsd:element minOccurs="0" name="alphanumeric" type="s1:designation"/>
+          <xsd:element minOccurs="0" name="amountOrRate" type="s1:comparisonDecimal"/>
+          <xsd:element minOccurs="0" name="date" type="s1:comparisonDate"/>
+        </xsd:choice>
+      </xsd:complexType>
+      <xsd:complexType name="comparisonAdditionalData">
+        <xsd:sequence>
+          <xsd:element name="identifier" type="s1:charMax10"/>
+          <xsd:element name="value" type="s1:comparisonAdditionalDataValue"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="customerComplementaryInformation">
+        <xsd:sequence>
+          <xsd:element name="complementaryInformation" type="s1:comparisonAdditionalData"/>
+          <xsd:element minOccurs="0" name="designation" type="s1:charMax30"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="charMax25">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="25"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="populationFile">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customer" type="s1:restrictedCustomer"/>
+          <xsd:element minOccurs="0" name="customerType" type="s1:customerType"/>
+          <xsd:element minOccurs="0" name="activeProfile" type="s1:customerProfile"/>
+          <xsd:element minOccurs="0" name="nationalIdentifier" type="s1:charMax20"/>
+          <xsd:element minOccurs="0" name="customerOfficer" type="s1:customerOfficer"/>
+          <xsd:element minOccurs="0" name="additionalInformation" type="s1:customerComplementaryInformation"/>
+          <xsd:element minOccurs="0" name="externalReference" type="s1:charMax25"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="accountComplementaryInformation">
+        <xsd:sequence>
+          <xsd:element name="complementaryInformation" type="s1:comparisonAdditionalData"/>
+          <xsd:element minOccurs="0" name="designation" type="s1:charMax30"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="accountFile">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="accountNumber" type="s1:accountIdentifierOurBranch"/>
+          <xsd:element minOccurs="0" name="accountClass" type="s1:designation"/>
+          <xsd:element minOccurs="0" name="customer" type="s1:populationFile"/>
+          <xsd:element minOccurs="0" name="additionalInformation" type="s1:accountComplementaryInformation"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="accountType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="code" type="s1:charMax3"/>
+          <xsd:element minOccurs="0" name="designation" type="s1:charMax30"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="productAttribute">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="ACCOUNT PRODUCT"/>
+          <xsd:enumeration value="FILE PRODUCT"/>
+          <xsd:enumeration value="SERVICE PRODUCT"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="product">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="code" type="s1:char3"/>
+          <xsd:element minOccurs="0" name="designation" type="s1:charMax30"/>
+          <xsd:element minOccurs="0" name="productAttribute" type="s1:productAttribute"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="accountStatus">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="F"/>
+          <xsd:enumeration value="I"/>
+          <xsd:enumeration value="O"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="decimal19_4">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="19"/>
+          <xsd:fractionDigits value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="integerBetween0And4">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:minInclusive value="0"/>
+          <xsd:maxInclusive value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="amountCurrency">
+        <xsd:sequence>
+          <xsd:element name="currency" type="s1:simpleCurrency"/>
+          <xsd:element minOccurs="0" name="numberOfDecimals" type="s1:integerBetween0And4"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="comparisonAmount">
+        <xsd:sequence>
+          <xsd:element name="amount1" type="s1:decimal19_4"/>
+          <xsd:element minOccurs="0" name="amount2" type="s1:decimal19_4"/>
+          <xsd:element minOccurs="0" name="currency" type="s1:amountCurrency"/>
+          <xsd:element name="comparator" type="s1:comparator"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getAccountListRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="accountCategory" type="s1:accountCategory"/>
+          <xsd:element minOccurs="0" name="branch" type="s1:branch"/>
+          <xsd:element minOccurs="0" name="account" type="s1:accountFile"/>
+          <xsd:element minOccurs="0" name="accountType" type="s1:accountType"/>
+          <xsd:element minOccurs="0" name="product" type="s1:product"/>
+          <xsd:element minOccurs="0" name="accountStatus" type="s1:accountStatus"/>
+          <xsd:element minOccurs="0" name="balance" type="s1:comparisonAmount"/>
+          <xsd:element minOccurs="0" name="accountTitle" type="s1:designation"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getAccountListRequestFlow">
+        <xsd:sequence>
+          <xsd:element name="requestHeader" type="s1:requestHeader"/>
+          <xsd:element name="getAccountListRequest" type="s1:getAccountListRequest"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAccountListRequestFlow" type="s1:getAccountListRequestFlow"/>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:length value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="getAccountResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="accountCategory" type="s1:accountCategory"/>
+          <xsd:element minOccurs="0" name="branch" type="s1:branch"/>
+          <xsd:element minOccurs="0" name="account" type="s1:accountFile"/>
+          <xsd:element minOccurs="0" name="accountType" type="s1:accountType"/>
+          <xsd:element minOccurs="0" name="product" type="s1:product"/>
+          <xsd:element minOccurs="0" name="accountStatus" type="s1:accountStatus"/>
+          <xsd:element minOccurs="0" name="balance" type="s1:comparisonAmount"/>
+          <xsd:element minOccurs="0" name="accountTitle" type="s1:designation"/>
+          <xsd:element minOccurs="0" name="indicativeBalance" type="s1:decimal19_4"/>
+          <xsd:element type="xsd:date" name="openingDate" minOccurs="0"/>
+          <xsd:element type="xsd:date" name="dateLocation" minOccurs="0"/>
+          <xsd:element minOccurs="0" name="checkKey" type="s1:char2"/>
+          <xsd:element minOccurs="0" name="checkDigitDeclared" type="s1:char2"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getAccountListResponse">
+        <xsd:sequence>
+          <xsd:element name="account" type="s1:getAccountResponse" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getAccountListResponseFlow">
+        <xsd:sequence>
+          <xsd:element name="responseHeader" type="s1:responseHeader"/>
+          <xsd:element name="responseStatus" type="s1:responseStatus"/>
+          <xsd:element minOccurs="0" name="getAccountListResponse" type="s1:getAccountListResponse"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAccountListResponseFlow" type="s1:getAccountListResponseFlow"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="errorResponseFlow">
+    <wsdl:part name="errorResponseFlow" element="fjs:errorResponseFlow"/>
+  </wsdl:message>
+  <wsdl:message name="getStatusIn">
+    <wsdl:part name="parameters" element="fjs:getStatusRequestFlow"/>
+  </wsdl:message>
+  <wsdl:message name="getStatusOut">
+    <wsdl:part name="parameters" element="fjs:getStatusResponseFlow"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountListIn">
+    <wsdl:part name="parameters" element="fjs:getAccountListRequestFlow"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountListOut">
+    <wsdl:part name="parameters" element="fjs:getAccountListResponseFlow"/>
+  </wsdl:message>
+  <wsdl:portType name="getAccountListPortType">
+    <wsdl:operation name="getStatus">
+      <wsdl:input message="fjs:getStatusIn" name="getStatusRequestFlow"/>
+      <wsdl:output message="fjs:getStatusOut" name="getStatusResponseFlow"/>
+      <wsdl:fault message="fjs:errorResponseFlow" name="errorResponseFlow"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountList">
+      <wsdl:input message="fjs:getAccountListIn" name="getAccountListRequestFlow"/>
+      <wsdl:output message="fjs:getAccountListOut" name="getAccountListResponseFlow"/>
+      <wsdl:fault message="fjs:errorResponseFlow" name="errorResponseFlow"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="getAccountListBinding" type="fjs:getAccountListPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getStatus">
+      <soap:operation soapAction="getStatus"/>
+      <wsdl:input name="getStatusRequestFlow">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStatusResponseFlow">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="errorResponseFlow">
+        <soap:fault use="literal" name="errorResponseFlow"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAccountList">
+      <soap:operation soapAction="getAccountList"/>
+      <wsdl:input name="getAccountListRequestFlow">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAccountListResponseFlow">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="errorResponseFlow">
+        <soap:fault use="literal" name="errorResponseFlow"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getAccountList">
+    <wsdl:port binding="fjs:getAccountListBinding" name="getAccountListPortType">
+      <soap:address location="https://192.168.208.33:8095/getAccountList"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

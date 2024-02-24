@@ -1,0 +1,11 @@
+<nav role="navigation" class="navbar navbar-default">
+	<div class="navbar-collapse">
+	<ul class="nav navbar-nav">
+	<li><img src="${pageContext.request.contextPath}/static/img/rawbank.jpeg"/></li>
+		<li class="active"><a href="${pageContext.request.contextPath}/">Home</a></li>
+		<li><a href="${pageContext.request.contextPath}/searchCards">Change Card Status</a></li>
+		<li><a href="${pageContext.request.contextPath}/reloadMC">Reload MasterCard</a></li>
+		<li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+	</ul>
+	</div>
+</nav> 

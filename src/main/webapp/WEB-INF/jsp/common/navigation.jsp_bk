@@ -1,0 +1,23 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<nav role="navigation" class="navbar navbar-default">
+	<div class="navbar-collapse">
+	<ul class="nav navbar-nav">
+	<li><img alt = "Rawbank logo" src="${pageContext.request.contextPath}/static/img/rawbank.jpeg"/></li>
+		<li class="active"><a href="${pageContext.request.contextPath}/home"><spring:message code="menu.home" /></a></li>
+		<sec:authorize access="hasAnyAuthority('csc_admin_call_center','csc_admin_initiator')">
+			<li><a href="${pageContext.request.contextPath}/searchCards"><spring:message code="menu.changeStatus" /></a></li>
+		</sec:authorize>
+		<sec:authorize access="hasAuthority('csc_admin_initiator')">			
+			<li><a href="${pageContext.request.contextPath}/reloadMC"><spring:message code="menu.ReloadMasterCard" /></a></li>
+		</sec:authorize>
+		<sec:authorize access="hasAuthority('csc_admin_administrator')">	
+			<li><a href="${pageContext.request.contextPath}/approveCards"><spring:message code="menu.Approve" /></a></li>
+		</sec:authorize>		
+		<li><a href="${pageContext.request.contextPath}/logout"><spring:message code="menu.logout" /></a></li>
+		<li  class="user-name-img"><a href="${pageContext.request.contextPath}/userDetails">
+		<img alt = "User logo" src="${pageContext.request.contextPath}/static/img/user.png"/></a></li>		
+		<li class="user-name"><p class="p-3 mb-2 bg-success text-white"><spring:message code="app.login.user" />${name}</p></li>
+	</ul>
+	</div>
+</nav>

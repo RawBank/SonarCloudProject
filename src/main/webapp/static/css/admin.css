@@ -1,0 +1,197 @@
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgb(233, 233, 233);
+	color: rgb(128, 128, 128);
+	height: 50px;
+	text-align: center;
+}
+
+.login-container{
+    width:300px;
+    max-width:100%;
+    margin:50px auto;
+}
+
+.lang-icon{
+  position: absolute !important;
+  right: 25px;
+  top: 0;
+}
+
+.lang-icon-fr{
+  position: absolute !important;
+  right: 75px;
+  top: 0;
+}
+
+.user-name-img{
+  position: absolute !important;
+  right: 60px;
+  top: -13px;
+}
+.user-name{
+  position: absolute !important;
+  right: 20px;
+  top:33px;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.lang-label{
+  position: absolute !important;
+  right: 130px;
+  top: 20px;
+}
+ 
+ 
+.titre1 {
+	 font-family:  inherit;
+	 font-size: 1.0em;
+	 font-weight: bold;
+} 
+
+.titre2 {
+	font-family:  inherit;
+	 font-size: 1.0em;
+	 font-weight: bold;
+	
+}
+.titre3 {
+	font-family:  inherit;
+	 font-size: 0.8em;
+	 font-weight: bold;
+}
+.titre4 {
+	font-family:  inherit;
+	 font-size: 0.8em;
+	 font-weight: bold;
+}
+.titre5 {
+	font-family:  inherit;
+	 font-size: 0.8em;
+	 font-weight: bold;
+	
+}
+
+.d-none { 
+	display: none;
+}
+
+.modal-01{
+width: 70%;
+}
+
+
+.modal-02{
+width: 60%;
+}
+
+
+.seperator {
+  height: 100%;
+  width: 1px;
+  background: #ccc;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  left: 42%;
+}
+
+.inputValue {
+	border: 1px solid #337ab7;
+}
+
+*,.btn, .panel,input[type ="text"], input[type ="password"] {
+	border-radius: 0px;
+} 
+body {
+	
+	/*background-image:url("../img/atrium02.jpg");*/
+	background-repeat: no-repeat;
+	background-size: 100%;
+	min-height: 1000%;
+	opacity: 0.8;
+	max-height: 100vh;
+ 	overflow: scroll;
+}
+table.dataTable td.dt-control:before {
+ background-color: #337ab7;
+ }
+ 
+ 
+ 
+
+table.dataTable thead .sorting {
+	background:  url("../img/DataTableImages/sort_both.png") no-repeat
+		center right;
+}
+
+table.dataTable thead .sorting_asc {
+	
+	background: url("../img/DataTableImages/sort_asc.png") no-repeat center right;
+}
+
+table.dataTable thead .sorting_desc {
+	background: url("../img/DataTableImages/sort_desc.png") no-repeat center right;
+}
+
+table.dataTable thead .sorting_asc_disabled {
+	background: url("../img/DataTableImages/sort_asc_disabled.png") no-repeat center right;
+}
+
+table.dataTable thead .sorting_desc_disabled {
+	background: url("../img/DataTableImages/sort_desc_disabled.png")  no-repeat center right;
+}
+
+table.dataTable thead th {
+	border-bottom: none;
+}
+
+table.dataTable tfoot th {
+	border-top: none;
+}
+
+table.dataTable.no-footer {
+	border-bottom: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+	background: #337ab7;
+	color: white !important;
+	border-radius: 4px;
+	border: 1px solid #828282;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+	background: #337ab7;
+	color: white !important;
+}
+
+button.dt-button {
+	background: #337ab7;
+	border: 1px solid white;
+	font-size: 12px;
+	/*border-radius: 100px;*/
+}
+
+button.dt-button:hover {
+	background-color: blue;
+	border: 1px solid white;
+	/*border-radius: 100px;*/
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+button.dt-button:nth-child(1)>span:nth-child(1), button.dt-button:nth-child(2)>span:nth-child(1),
+	button.dt-button:nth-child(3)>span:nth-child(1) {
+	color: white;
+	font-size: 1.0em;
+}
+
+.dataTables_length {
+	margin-left: 200px;
+}
+ 

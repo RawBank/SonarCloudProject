@@ -1,0 +1,141 @@
+"2022-08-17 16:29:19 - Starting RawAdminPortalApplication using Java 1.8.0_202 on KNATRINV053 with PID 25960 (C:\Users\krishna\git\adminPortal\target\classes started by krishna in C:\Users\krishna\git\adminPortal)
+""2022-08-17 16:29:19 - The following 1 profile is active: "@spring.profiles.active@"
+""2022-08-17 16:29:19 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-08-17 16:29:19 - Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
+""2022-08-17 16:29:19 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-08-17 16:29:19 - Finished Spring Data repository scanning in 5 ms. Found 2 JPA repository interfaces.
+""2022-08-17 16:29:20 - Post-processing PropertySource instances
+""2022-08-17 16:29:20 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+""2022-08-17 16:29:20 - Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+""2022-08-17 16:29:20 - Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+""2022-08-17 16:29:20 - Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+""2022-08-17 16:29:20 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+""2022-08-17 16:29:20 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+""2022-08-17 16:29:20 - Converting PropertySource Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+""2022-08-17 16:29:20 - Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+""2022-08-17 16:29:20 - Converting PropertySource URL [file:C:/Users/krishna/rawb-appconfig/config.csc_admin/params.properties] [org.springframework.core.env.CompositePropertySource] to EncryptableEnumerablePropertySourceWrapper
+""2022-08-17 16:29:20 - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+""2022-08-17 16:29:20 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+""2022-08-17 16:29:20 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+""2022-08-17 16:29:20 - Tomcat initialized with port(s): 8081 (http)
+""2022-08-17 16:29:20 - Starting service [Tomcat]
+""2022-08-17 16:29:20 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+""2022-08-17 16:29:20 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+""2022-08-17 16:29:20 - Initializing Spring embedded WebApplicationContext
+""2022-08-17 16:29:20 - Root WebApplicationContext: initialization completed in 326 ms
+""2022-08-17 16:29:20 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-08-17 16:29:20 - HikariPool-9 - Starting...
+""2022-08-17 16:29:20 - HikariPool-9 - Start completed.
+""2022-08-17 16:29:20 - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+""2022-08-17 16:29:20 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-08-17 16:29:20 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-08-17 16:29:20 - String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing Default String Encryptor
+""2022-08-17 16:29:20 - Encryptor config not found for property jasypt.encryptor.algorithm, using default value: PBEWITHHMACSHA512ANDAES_256
+""2022-08-17 16:29:20 - Encryptor config not found for property jasypt.encryptor.key-obtention-iterations, using default value: 1000
+""2022-08-17 16:29:20 - Encryptor config not found for property jasypt.encryptor.pool-size, using default value: 1
+""2022-08-17 16:29:20 - Encryptor config not found for property jasypt.encryptor.provider-name, using default value: null
+""2022-08-17 16:29:20 - Encryptor config not found for property jasypt.encryptor.provider-class-name, using default value: null
+""2022-08-17 16:29:20 - Encryptor config not found for property jasypt.encryptor.salt-generator-classname, using default value: org.jasypt.salt.RandomSaltGenerator
+""2022-08-17 16:29:20 - Encryptor config not found for property jasypt.encryptor.iv-generator-classname, using default value: org.jasypt.iv.RandomIvGenerator
+""2022-08-17 16:29:20 - Encryptor config not found for property jasypt.encryptor.string-output-type, using default value: base64
+""2022-08-17 16:29:20 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-08-17 16:29:20 - HikariPool-10 - Starting...
+""2022-08-17 16:29:20 - Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+""2022-08-17 16:29:20 - HikariPool-10 - Start completed.
+""2022-08-17 16:29:20 - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+""2022-08-17 16:29:20 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-08-17 16:29:20 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-08-17 16:29:20 -  Initialization...
+""2022-08-17 16:29:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-08-17 16:29:20 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ddb4195, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f87626c, org.springframework.security.web.header.HeaderWriterFilter@3c1d521d, org.springframework.web.filter.CorsFilter@4f3d018e, org.springframework.security.web.authentication.logout.LogoutFilter@60714488, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e37510f, org.springframework.security.web.session.ConcurrentSessionFilter@4c29f648, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49dc563b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4759ff6b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59d47ed4, org.springframework.security.web.session.SessionManagementFilter@27d53bd0, org.springframework.security.web.access.ExceptionTranslationFilter@8bb68c1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@488c3d1]
+""2022-08-17 16:29:20 - LiveReload server is running on port 35729
+""2022-08-17 16:29:20 - Tomcat started on port(s): 8081 (http) with context path '/adminPortal'
+""2022-08-17 16:29:20 - Started RawAdminPortalApplication in 1.021 seconds (JVM running for 2851.291)
+""2022-08-17 16:29:20 - 
+==========================================================================
+             csc admin portal app
+==========================================================================
+
+""2022-08-17 16:29:20 - Condition evaluation unchanged
+""2022-08-17 16:29:25 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-08-17 16:29:25 - Initializing Servlet 'dispatcherServlet'
+""2022-08-17 16:29:25 - Completed initialization in 1 ms
+""2022-08-17 16:29:26 - Approve status Screen.. RawCardInfoModel [customerName=null, custCardNumber=null, cardStatus=null, changeReason=null, file=null, customerNumber=null, currentCardStatus=null, oldCardLimit=null, newCardLimit=null] 
+""2022-08-17 16:29:26 - Pending cards size: 1
+""2022-08-17 16:29:41 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-08-17 16:29:41 - HikariPool-10 - Shutdown initiated...
+""2022-08-17 16:29:41 - HikariPool-10 - Shutdown completed.
+""2022-08-17 16:29:41 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-08-17 16:29:41 - HikariPool-9 - Shutdown initiated...
+""2022-08-17 16:29:41 - HikariPool-9 - Shutdown completed.
+""2022-08-17 16:29:41 - Starting RawAdminPortalApplication using Java 1.8.0_202 on KNATRINV053 with PID 25960 (C:\Users\krishna\git\adminPortal\target\classes started by krishna in C:\Users\krishna\git\adminPortal)
+""2022-08-17 16:29:41 - The following 1 profile is active: "@spring.profiles.active@"
+""2022-08-17 16:29:41 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-08-17 16:29:41 - Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
+""2022-08-17 16:29:41 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-08-17 16:29:41 - Finished Spring Data repository scanning in 3 ms. Found 2 JPA repository interfaces.
+""2022-08-17 16:29:41 - Post-processing PropertySource instances
+""2022-08-17 16:29:41 - Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+""2022-08-17 16:29:41 - Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+""2022-08-17 16:29:41 - Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+""2022-08-17 16:29:41 - Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+""2022-08-17 16:29:41 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+""2022-08-17 16:29:41 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+""2022-08-17 16:29:41 - Converting PropertySource Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+""2022-08-17 16:29:41 - Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+""2022-08-17 16:29:41 - Converting PropertySource URL [file:C:/Users/krishna/rawb-appconfig/config.csc_admin/params.properties] [org.springframework.core.env.CompositePropertySource] to EncryptableEnumerablePropertySourceWrapper
+""2022-08-17 16:29:41 - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+""2022-08-17 16:29:41 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+""2022-08-17 16:29:41 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+""2022-08-17 16:29:41 - Tomcat initialized with port(s): 8081 (http)
+""2022-08-17 16:29:41 - Starting service [Tomcat]
+""2022-08-17 16:29:41 - Starting Servlet engine: [Apache Tomcat/9.0.63]
+""2022-08-17 16:29:41 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+""2022-08-17 16:29:41 - Initializing Spring embedded WebApplicationContext
+""2022-08-17 16:29:41 - Root WebApplicationContext: initialization completed in 294 ms
+""2022-08-17 16:29:41 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-08-17 16:29:41 - HikariPool-11 - Starting...
+""2022-08-17 16:29:41 - HikariPool-11 - Start completed.
+""2022-08-17 16:29:41 - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+""2022-08-17 16:29:41 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-08-17 16:29:41 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-08-17 16:29:41 - String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing Default String Encryptor
+""2022-08-17 16:29:41 - Encryptor config not found for property jasypt.encryptor.algorithm, using default value: PBEWITHHMACSHA512ANDAES_256
+""2022-08-17 16:29:41 - Encryptor config not found for property jasypt.encryptor.key-obtention-iterations, using default value: 1000
+""2022-08-17 16:29:41 - Encryptor config not found for property jasypt.encryptor.pool-size, using default value: 1
+""2022-08-17 16:29:41 - Encryptor config not found for property jasypt.encryptor.provider-name, using default value: null
+""2022-08-17 16:29:41 - Encryptor config not found for property jasypt.encryptor.provider-class-name, using default value: null
+""2022-08-17 16:29:41 - Encryptor config not found for property jasypt.encryptor.salt-generator-classname, using default value: org.jasypt.salt.RandomSaltGenerator
+""2022-08-17 16:29:41 - Encryptor config not found for property jasypt.encryptor.iv-generator-classname, using default value: org.jasypt.iv.RandomIvGenerator
+""2022-08-17 16:29:41 - Encryptor config not found for property jasypt.encryptor.string-output-type, using default value: base64
+""2022-08-17 16:29:41 - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-08-17 16:29:41 - HikariPool-12 - Starting...
+""2022-08-17 16:29:41 - Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+""2022-08-17 16:29:41 - HikariPool-12 - Start completed.
+""2022-08-17 16:29:41 - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+""2022-08-17 16:29:41 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-08-17 16:29:41 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-08-17 16:29:42 -  Initialization...
+""2022-08-17 16:29:42 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-08-17 16:29:42 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65dca487, org.springframework.security.web.context.SecurityContextPersistenceFilter@a04a2fa, org.springframework.security.web.header.HeaderWriterFilter@105ea186, org.springframework.web.filter.CorsFilter@11896187, org.springframework.security.web.authentication.logout.LogoutFilter@7d126724, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4198b228, org.springframework.security.web.session.ConcurrentSessionFilter@760498e3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fb360ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bf4f9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@32cfc2ef, org.springframework.security.web.session.SessionManagementFilter@102fe997, org.springframework.security.web.access.ExceptionTranslationFilter@3a78c091, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5115a90d]
+""2022-08-17 16:29:42 - LiveReload server is running on port 35729
+""2022-08-17 16:29:42 - Tomcat started on port(s): 8081 (http) with context path '/adminPortal'
+""2022-08-17 16:29:42 - Started RawAdminPortalApplication in 0.865 seconds (JVM running for 2872.66)
+""2022-08-17 16:29:42 - 
+==========================================================================
+             csc admin portal app
+==========================================================================
+
+""2022-08-17 16:29:42 - Condition evaluation unchanged
+""2022-08-17 16:30:05 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-08-17 16:30:05 - Initializing Servlet 'dispatcherServlet'
+""2022-08-17 16:30:05 - Completed initialization in 1 ms
+""2022-08-17 16:30:05 - Approve status Screen.. RawCardInfoModel [customerName=null, custCardNumber=null, cardStatus=null, changeReason=null, file=null, customerNumber=null, currentCardStatus=null, oldCardLimit=null, newCardLimit=null] 
+""2022-08-17 16:30:05 - Pending cards size: 1
+""2022-08-17 16:32:05 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-08-17 16:32:05 - HikariPool-12 - Shutdown initiated...
+""2022-08-17 16:32:06 - HikariPool-12 - Shutdown completed.
+""2022-08-17 16:32:06 - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-08-17 16:32:06 - HikariPool-11 - Shutdown initiated...
+""2022-08-17 16:32:06 - HikariPool-11 - Shutdown completed.
+"
